@@ -269,14 +269,13 @@ def page_preprocessing():
         if len(total_charges_issues) > 0:
             st.dataframe(total_charges_issues)
         else:
-         if not st.session_state.balloons_shown:
-            st.balloons()
-            st.session_state.balloons_shown=True
-            st.info("No issues found!")
-         else:
-             st.session_state.balloons_shown=False
+            if "balloons_shown" not in st.session_state:
+                st.session_state.balloons_shown = False
 
-    
+            if not st.session_state.balloons_shown:
+                st.balloons()
+                st.session_state.balloons_shown = True
+
     # Preprocessing
     st.subheader("⚙️ Apply Preprocessing")
 
