@@ -135,20 +135,21 @@ def train_models(X_train, X_test, y_train, y_test):
 
 # Page 1: Data Import and Overview
 def page_data_overview():
-    st.title("📊 Data Import and Overview") #streamlit title
-    st.markdown("---")
-    
-    # Data loading section
-    st.subheader("🔄 Data Loading")
-    
-    col1, col2 = st.columns(2)
+    img = Image.open("mlg2.jpeg")
+
+def page_data_overview():
+    # Create two columns with a custom width ratio
+    col1, col2 = st.columns([1, 3])  # First column is 1/4 width, second is 3/4
     
     with col1:
-        if st.button("Load Default Dataset"):
-            dataset = load_default_dataset()
-            if dataset is not None:
-                st.session_state.dataset = dataset
-                st.success("Default dataset loaded successfully!")
+        st.image(img, width=100)  # Adjust width as needed
+        
+    with col2:
+        st.title("Data Import and Overview")
+        st.markdown("---")
+    
+    
+    col1, col2 = st.columns(2)
     
     with col2:
         uploaded_file = st.file_uploader("Upload your own dataset", type=['csv'])
