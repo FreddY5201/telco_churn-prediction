@@ -135,14 +135,14 @@ def train_models(X_train, X_test, y_train, y_test):
 
 # Page 1: Data Import and Overview
 def page_data_overview():
-    img = Image.open("mlg2.jpeg")
+    logo = Image.open("mlg2.jpeg")
 
 def page_data_overview():
     # Create two columns with a custom width ratio
     col1, col2 = st.columns([1, 3])  # First column is 1/4 width, second is 3/4
     
     with col1:
-        st.image(img, width=100)  # Adjust width as needed
+        st.image(logo, width=100)  # Adjust width as needed
         
     with col2:
         st.title("Data Import and Overview")
